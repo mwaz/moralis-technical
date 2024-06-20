@@ -1,10 +1,10 @@
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 import { defineConfig, devices } from "@playwright/test";
 
 dotenv.config();
 
 export const domainToRunTestsAgainst =
-  process.env['TESTING_DOMAIN'] || 'https://admin.moralis.io';
+  process.env["TESTING_DOMAIN"] || "https://admin.moralis.io";
 
 export default defineConfig({
   testDir: "./tests",
@@ -20,7 +20,6 @@ export default defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-   
     trace: "on-first-retry",
     baseURL: domainToRunTestsAgainst,
   },
@@ -41,7 +40,5 @@ export default defineConfig({
     //   name: "webkit",
     //   use: { ...devices["Desktop Safari"] },
     // },
-
   ],
-
 });
