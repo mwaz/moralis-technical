@@ -15,12 +15,14 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: |
-       cd task-1-playwright
+       cd playwright-tests
        npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npm run test
+      run: |
+        cd playwright-tests
+         npm run test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
