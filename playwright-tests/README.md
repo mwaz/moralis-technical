@@ -1,4 +1,4 @@
-# Node, RPC, and GetWalletNFTs Functional, Non-functional & Automation Tests
+# Node, RPC, and GetWalletNFTs Playwright Tests
 
 This project contains functional and automation tests for both UI and API using the Playwright framework. The tests cover the following scenarios:
 
