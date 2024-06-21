@@ -70,14 +70,14 @@ Each test measures the performance and scalability of the respective endpoint un
 
 ## NB
 
-- Adjust the environment variables in `environmentConfig.js` to match your specific environment before running the tests.
+- Adjust the environment variables in `environmentConfig.js` to match your specific credentials for your account before running the tests.
 - Ensure you have valid credentials and permissions for the Moralis and Node APIs used in the tests.
 
 ## Load Testing Summary
 
 ![Load Testing Screenshot](load-testing-results.png)
 
-The load test in this specific case involved 1,320 requests with a 95th percentile response time of 1 second, resulting in 69 failures at an average rate of 15 requests per second. The detailed metrics for three endpoints are summarized below:
+The load test in this specific case (Moralis 4 API's) involved 1,320 requests with a 95th percentile response time of 1 second, resulting in 69 failures at an average rate of 15 requests per second. The detailed metrics for three endpoints are summarized below:
 
 ### Detailed Metrics
 
