@@ -137,9 +137,7 @@ test.describe("Get NFT tests", () => {
     );
   });
 
-  test("User cannot get NFTs by when API Key is invalid", async ({
-    request,
-  }) => {
+  test("User cannot get NFTs when API Key is invalid", async ({ request }) => {
     const walletAddress = "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e";
 
     const nftResponse = await request.get(
@@ -163,7 +161,7 @@ test.describe("Get NFT tests", () => {
     await expect(response.message).toEqual("invalid signature");
   });
 
-  test("User cannot get NFTs by when API Key format is invalid", async ({
+  test("User cannot get NFTs when API-Key format is invalid", async ({
     request,
   }) => {
     const walletAddress = "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e";

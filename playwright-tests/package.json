@@ -5,7 +5,8 @@
     "test": "npx playwright test",
     "test:rpc": "npm run test rpc",
     "test:nft": "npm run test get-nft",
-    "test:node": "npm run test create-node"
+    "test:node": "npm run test create-node",
+    "lint": "npx eslint ."
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,12 @@
   "devDependencies": {
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.6",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
     "dotenv": "^16.4.5",
-    "globals": "^15.6.0"
+    "eslint": "^9.5.0",
+    "eslint-plugin-playwright": "^1.6.2",
+    "globals": "^15.6.0",
+    "typescript": "^5.5.2"
   }
 }

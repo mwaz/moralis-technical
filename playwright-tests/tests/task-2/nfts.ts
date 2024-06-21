@@ -9,6 +9,11 @@ export const copyAPIKeyButton = (page: Page) =>
 
 // *** HELPERS ***
 
+/**
+ * Shows API Key on the dashboard and copies it to the clipboard
+ * @param page 
+ * @returns the copied API Key
+ */
 export default async function showAndCopyAPI(page: Page): Promise<string> {
   await showAPIKeyButton(page).click();
   await copyAPIKeyButton(page).click();
