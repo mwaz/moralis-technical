@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "k6 run load-tests.js"
+    "test": "k6 run task-3/load-tests.js"
   },
   "keywords": [],
   "author": "",

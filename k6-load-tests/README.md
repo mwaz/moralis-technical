@@ -34,7 +34,7 @@ To run the load tests using k6, follow these steps:
 7. **Run Load Tests Locally**:
 
    ```bash
-   k6 run load-tests.js
+   k6 run task-3/load-tests.js
    ```
 
 8. **Run Load Tests on Locally but with Cloud Analysis**:
@@ -43,7 +43,7 @@ To run the load tests using k6, follow these steps:
     k6 login cloud --token <your-k6-cloud-api-token>
     ## A login to the cloud is required before executing cloud tests locally with cloud analysis
 
-    k6 cloud load-tests.js 
+    k6 cloud task-3/load-tests.js 
    ```
 
 ## Load Test Metrics

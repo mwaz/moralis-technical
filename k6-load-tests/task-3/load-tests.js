@@ -1,6 +1,6 @@
 import http from "k6/http";
 import { check, group } from "k6";
-import { moralisConfig } from "./environmentConfig.js";
+import { moralisConfig } from "../environmentConfig.js";
 
 export const options = {
   ext: {
