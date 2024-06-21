@@ -35,6 +35,10 @@ export async function loginUser(
 
 // *** ASSERTIONS ***
 
+/**
+ * Verify one of the cards is visible on the dashboard
+ * @param page
+ */
 export async function assertDashboardVisibility(page: Page): Promise<void> {
   await expect(dashboardUsageCard(page)).toBeVisible({ timeout: 10000 });
 }

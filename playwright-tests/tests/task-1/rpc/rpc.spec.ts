@@ -5,6 +5,7 @@ import * as node from "../node/create-node";
 function isHexadecimal(str) {
   return /^0x[0-9a-fA-F]+$/.test(str);
 }
+
 test.describe("RPC tests", () => {
   let nodeAPIKey;
   test.beforeEach(async ({ page }) => {
@@ -44,6 +45,7 @@ test.describe("RPC tests", () => {
     await expect(response).toHaveProperty("id");
     await expect(response).toHaveProperty("result");
     await node.deleteNode(page);
+    // Node is deleted to ensure test isolation on every run and for subsequent tests
   });
 
   test("User can get block by number", async ({ page, request }) => {

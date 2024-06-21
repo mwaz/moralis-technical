@@ -112,7 +112,7 @@ export async function clickSupportButton(page: Page): Promise<void> {
 
 // *** ASSERTIONS ***
 
-export async function assertVisibleSupportPage(page): Promise<void> {
+export async function assertVisibleSupportPage(page: Page): Promise<void> {
   await page.waitForURL("**/support");
   await expect(page.getByText("Can we help?")).toBeVisible();
 }
