@@ -24,8 +24,8 @@ This project contains functional and automation tests for both UI and API using 
 2. **Install dependencies:**
 
     ```sh
-    cd playwright-tests
-    npm install
+    cd playwright-tests;
+    npm install;
     ```
 
 3. **Create a Moralis account:**
@@ -130,8 +130,8 @@ This project is licensed under the MIT License. See the [LICENSE](https://choose
 
 ## Test Execution Clips
 
-![Create Node Tests](./fixtures/create-node-tests.mp4load-testing-results.mp4)
+![Create Node Tests MP4 file](./fixtures/create-node-tests.mp4)
 
-![ Get NFT Tests](./fixtures/get-nft-tests.mp4)
+![ Get NFT Tests MP4 file](./fixtures/get-nft-tests.mp4)
 
-![ Get NFT Tests](./fixtures/rpc-tests.mp4)
+![ Get NFT Tests MP4 file](./fixtures/rpc-tests.mp4)
