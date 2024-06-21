@@ -1,0 +1,20 @@
+{
+  "name": "playwright-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:rpc": "npm run test rpc",
+    "test:nft": "npm run test get-nft",
+    "test:node": "npm run test create-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.14.6",
+    "dotenv": "^16.4.5",
+    "globals": "^15.6.0"
+  }
+}
