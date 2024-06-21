@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import * as login from "../utils/login";
+import * as login from "../../utils/login";
 import * as node from "./create-node";
 
 test.describe("Create Node tests", () => {
@@ -45,7 +45,7 @@ test.describe("Create Node tests", () => {
     await node.deleteNode(page);
   });
 
-  test.skip("User cannot select a network if a protocol is not selected", async ({
+  test("User cannot select a network if a protocol is not selected", async ({
     page,
   }) => {
     await login.assertDashboardVisibility(page);
@@ -54,15 +54,10 @@ test.describe("Create Node tests", () => {
     await page
       .getByTestId("test-CardCountrySelect")
       .selectOption({ value: "" });
-    // const optionToSelect = await page
-    //   .locator("option", { hasText: 'Mainnet' })
-    //   .textContent();
-    // await page
-    //   .locator('[name="select-network"]')
-    //   .selectOption({ label: optionToSelect });
-    await expect(node.nodeButton(page)).toBeHidden();
+    await expect(node.nodeButton(page)).toBeDisabled();
   });
-  test.skip("User cannot create a node if a network is not selected", async ({
+
+  test("User cannot create a node if a network is not selected", async ({
     page,
   }) => {
     await login.assertDashboardVisibility(page);
@@ -71,11 +66,16 @@ test.describe("Create Node tests", () => {
     await page
       .getByTestId("test-CardCountrySelect")
       .selectOption({ value: "Ethereum" });
-    await expect(node.nodeButton(page)).toBeHidden();
+    await expect(node.nodeButton(page)).toBeDisabled();
   });
+
   test("User can access support help if they are facing problems creating a node", async ({
     page,
   }) => {
-    // ...
+    await login.assertDashboardVisibility(page);
+    await node.openNodesTab(page);
+    await node.createNode(page);
+    await node.clickSupportButton(page);
+    await node.assertVisibleSupportPage(page);
   });
 });

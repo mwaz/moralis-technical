@@ -14,7 +14,7 @@ export const dashboardUsageCard = (page: Page) =>
 
 /**
  * Logs in a user using email/password
- * Known issues: Captcha keeps popping up therefore,
+ * Known issues: Captcha keeps popping up, therefore,
  * only UI test execution works, by stepping over and slowing down execution
  * @param page
  * @param param1
@@ -28,7 +28,7 @@ export async function loginUser(
   await emailInput(page).pressSequentially(username, { delay: 100 });
   await passwordInput(page).click();
   await passwordInput(page).pressSequentially(password, { delay: 100 });
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(5000); // Bypassing Google re-captcha when running in headless mode .Not a solid way to do it!
   await expect(loginButton(page)).toBeVisible();
   await loginButton(page).click();
 }

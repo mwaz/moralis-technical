@@ -1,8 +1,9 @@
-# Node and RPC Functional & Automation Tests
+# Node, RPC, and GetWalletNFTs Functional, Non-functional & Automation Tests
 
 This project contains functional and automation tests for both UI and API using the Playwright framework. The tests cover the following scenarios:
 - **Node Operations**: Creating, deleting, viewing nodes, and verifying scenarios where a node cannot be created.
 - **RPC Methods**: Executing `blockNumber`, `getBlockByNumber`, and `getTransactionByHash` methods on a node.
+- **getWalletNFTs**: uses `getWalletNFTs` to get the NFTs from a specific wallet address.
 
 ## Prerequisites
 
@@ -14,12 +15,13 @@ This project contains functional and automation tests for both UI and API using 
 
 1. **Clone the repository:**
     ```sh
-    git clone <repository_url>
-    cd <repository_name>
+    git clone git@github.com:mwaz/moralis-technical.git
+    cd moralis-technical
     ```
 
 2. **Install dependencies:**
     ```sh
+    cd playwright-tests
     npm install
     ```
 
@@ -30,14 +32,13 @@ This project contains functional and automation tests for both UI and API using 
 4. **Create a Node:**
     - Log in to the Moralis Admin UI.
     - Navigate to the Node section and create a new node.
-    - Copy the Node URL for use in the tests.
+    - Copy the Node API Key for your use. (This can be re-created, however the copied one is for verification purposes on a tool like Postman)
 
 ## Configuration
 
 1. **Environment Variables:**
     Create a `.env` file in the root of the project and add the following variables:
     ```env
-    MORALIS_NODE_URL=<your_node_url>
     MORALIS_ADMIN_EMAIL=<your_admin_email>
     MORALIS_ADMIN_PASSWORD=<your_admin_password>
     ```
@@ -46,24 +47,37 @@ This project contains functional and automation tests for both UI and API using 
 
 1. **Execute all tests:**
     ```sh
-    npm test
+    npm run test
     ```
 
-2. **Run specific tests:**
+2. **Execute RPC tests:**
+    ```sh
+    npm run test:rpc
+    ```
+
+3. **Execute get NFT tests:**
+    ```sh
+    npm run test:nft
+    ```
+
+4. **Execute Node tests:**
+    ```sh
+    npm run test:node
+    ```
+
+
+5. **Run specific file tests:**
     You can run specific tests by specifying the path to the test file. For example:
     ```sh
-    npx playwright test tests/nodeOperations.test.js
-    npx playwright test tests/rpcMethods.test.js
+    npx playwright test tests/task-1/node/create-node.spec.ts
+
     ```
-
-## Test Coverage
-
 ### Node Operations
 
 - **Create Node**: Tests the creation of a new node through the UI.
 - **Delete Node**: Tests the deletion of an existing node through the UI.
 - **View Node**: Tests viewing the details of a node.
-- **Node Creation Failures**: Verifies scenarios where a node cannot be created due to various reasons (e.g., invalid inputs, insufficient permissions).
+- **Node Creation Failures**: Verifies scenarios where a node cannot be created due to various reasons (e.g. lack of the network or the protocol).
 
 ### RPC Methods
 
@@ -71,10 +85,15 @@ This project contains functional and automation tests for both UI and API using 
 - **getBlockByNumber**: Test retrieving a block by its number.
 - **getTransactionByHash**: Test fetching a transaction by its hash.
 
+### Get NFTs
+
+- **getWalletNFTs**: Test fetching the NFTs in a given wallet.
+
 ## Test Files
 
-- **tests/node/create-node.spec.ts**: Contains tests for node operations.
-- **tests/rpc/rpc.spec.ts**: Contains tests for RPC methods.
+- **tests/task-1/node/create-node.spec.ts**: Contains tests for node operations.
+- **tests/task-1/rpc/rpc.spec.ts**: Contains tests for RPC methods.
+ **tests/task-2/get-nfts.spec.ts**: Contains tests for get NFTS both functional and non-functional.
 
 ## Development
 
@@ -97,6 +116,4 @@ This project contains functional and automation tests for both UI and API using 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
+This project is licensed under the MIT License. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.

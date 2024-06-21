@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import * as login from "../utils/login";
+import * as login from "../../utils/login";
 import * as node from "../node/create-node";
 
 function isHexadecimal(str) {
@@ -129,7 +129,7 @@ test.describe("RPC tests", () => {
     await node.deleteNode(page);
   });
 
-  test.only("User can get transaction by hash", async ({ page, request }) => {
+  test("User can get transaction by hash", async ({ page, request }) => {
     const transaction = await request.post(
       `https://site1.moralis-nodes.com/eth/${nodeAPIKey}`,
       {
@@ -196,7 +196,7 @@ test.describe("RPC tests", () => {
     }
     await node.deleteNode(page);
   });
-  
+
   /**
    * Negative cases
    *  Verify user cannot login with an invalid node api key

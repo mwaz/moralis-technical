@@ -1,8 +1,11 @@
 {
-  "name": "task-1-playwright-tests",
+  "name": "playwright-tests",
   "version": "1.0.0",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test:rpc": "npm run test rpc",
+    "test:nft": "npm run test get-nft",
+    "test:node": "npm run test create-node"
   },
   "keywords": [],
   "author": "",

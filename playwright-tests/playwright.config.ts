@@ -22,7 +22,9 @@ export default defineConfig({
   use: {
     trace: "on-first-retry",
     baseURL: domainToRunTestsAgainst,
+    permissions: ["clipboard-read", "clipboard-write"],
   },
+  testMatch: "**.spec.ts",
 
   /* Configure projects for major browsers */
   projects: [
@@ -30,6 +32,10 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
+
+    /**
+     * Only executing on Chromium browser due to Google recaptcha issue
+     */
 
     // {
     //   name: "firefox",

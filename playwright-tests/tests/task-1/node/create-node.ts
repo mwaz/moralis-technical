@@ -18,6 +18,7 @@ export const closeModalButton = (page: Page) =>
   page.locator('[data-icon="xmark"]').last();
 export const nodeKey = (page: Page) =>
   page.locator('[data-icon="key-skeleton"]').last();
+export const supportButton = (page: Page) => page.getByText("Support").first();
 
 // *** HELPERS ***
 
@@ -91,7 +92,7 @@ export async function closeNodeModal(page: Page): Promise<void> {
 }
 
 /**
- * View the Node API Key and verify it against the response 
+ * View the Node API Key and verify it against the response
  * returned from the API response
  * @param page
  * @param apiKey
@@ -105,4 +106,13 @@ export async function viewNodeKey(page: Page, apiKey: string): Promise<void> {
   await expect(value).toEqual(apiKey);
 }
 
+export async function clickSupportButton(page: Page): Promise<void> {
+  await supportButton(page).click();
+}
+
 // *** ASSERTIONS ***
+
+export async function assertVisibleSupportPage(page): Promise<void> {
+  await page.waitForURL("**/support");
+  await expect(page.getByText("Can we help?")).toBeVisible();
+}
