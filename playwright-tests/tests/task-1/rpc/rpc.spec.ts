@@ -197,9 +197,43 @@ test.describe("RPC tests", () => {
     await node.deleteNode(page);
   });
 
-  /**
-   * Negative cases
-   *  Verify user cannot login with an invalid node api key
-   * Verify user cannot login with a deleted node api key
-   */
+  test("User cannot access RPC Url when nodeAPI key is inexistent", async ({
+    request,
+  }) => {
+    const block = await request.post(
+      `https://site1.moralis-nodes.com/eth/7158cda32f6c4e089465b70825facb6c`,
+      {
+        data: {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "eth_getBlockByNumber",
+          params: ["latest", true],
+        },
+      }
+    );
+    const response = await block.json();
+    await expect(block.status()).toEqual(401);
+    await expect(response.name).toEqual("UnauthorizedException");
+    await expect(response.message).toEqual("Node Key not valid");
+  });
+
+  test("User cannot access RPC Url when nodeAPI key is invalid", async ({
+    request,
+  }) => {
+    const block = await request.post(
+      `https://site1.moralis-nodes.com/eth/7158cda32f6c4e089465b70825facb6ce`,
+      {
+        data: {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "eth_getBlockByNumber",
+          params: ["latest", true],
+        },
+      }
+    );
+    const response = await block.json();
+    await expect(block.status()).toEqual(401);
+    await expect(response.name).toEqual("UnauthorizedException");
+    await expect(response.message).toEqual("Token is invalid format");
+  });
 });
