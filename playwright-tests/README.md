@@ -1,6 +1,7 @@
 # Node, RPC, and GetWalletNFTs Functional, Non-functional & Automation Tests
 
 This project contains functional and automation tests for both UI and API using the Playwright framework. The tests cover the following scenarios:
+
 - **Node Operations**: Creating, deleting, viewing nodes, and verifying scenarios where a node cannot be created.
 - **RPC Methods**: Executing `blockNumber`, `getBlockByNumber`, and `getTransactionByHash` methods on a node.
 - **getWalletNFTs**: uses `getWalletNFTs` to get the NFTs from a specific wallet address.
@@ -14,12 +15,14 @@ This project contains functional and automation tests for both UI and API using 
 ## Setup
 
 1. **Clone the repository:**
+
     ```sh
     git clone git@github.com:mwaz/moralis-technical.git
     cd moralis-technical
     ```
 
 2. **Install dependencies:**
+
     ```sh
     cd playwright-tests
     npm install
@@ -38,6 +41,7 @@ This project contains functional and automation tests for both UI and API using 
 
 1. **Environment Variables:**
     Create a `.env` file in the root of the project and add the following variables:
+
     ```env
     MORALIS_ADMIN_EMAIL=<your_admin_email>
     MORALIS_ADMIN_PASSWORD=<your_admin_password>
@@ -46,32 +50,37 @@ This project contains functional and automation tests for both UI and API using 
 ## Running the Tests
 
 1. **Execute all tests:**
+
     ```sh
     npm run test
     ```
 
 2. **Execute RPC tests:**
+
     ```sh
     npm run test:rpc
     ```
 
 3. **Execute get NFT tests:**
+
     ```sh
     npm run test:nft
     ```
 
 4. **Execute Node tests:**
+
     ```sh
     npm run test:node
     ```
 
-
 5. **Run specific file tests:**
     You can run specific tests by specifying the path to the test file. For example:
+
     ```sh
     npx playwright test tests/task-1/node/create-node.spec.ts
 
     ```
+
 ### Node Operations
 
 - **Create Node**: Tests the creation of a new node through the UI.
@@ -103,6 +112,7 @@ This project contains functional and automation tests for both UI and API using 
     - Ensure that your tests are self-contained and follow the existing naming conventions.
 
 2. **Run Linter:**
+
     ```sh
     npm run lint
     ```
@@ -117,3 +127,11 @@ This project contains functional and automation tests for both UI and API using 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
+
+## Test Execution Clips
+
+![Create Node Tests](./fixtures/create-node-tests.mp4load-testing-results.mp4)
+
+![ Get NFT Tests](./fixtures/get-nft-tests.mp4)
+
+![ Get NFT Tests](./fixtures/rpc-tests.mp4)
