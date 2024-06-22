@@ -81,6 +81,23 @@ This project contains functional and automation tests for both UI and API using 
 
     ```
 
+6. **Run tests using DEBUG mode: [Especially when evading Google Captcha]**
+    You can run tests by using debug, this is especially helpful because of the Google Recaptcha issues on the moralis. For example:
+
+    ```bash
+    // To run nft folder specs 
+    npm run test:nft -- -- --debug
+
+    // To run rpc folder specs
+    npm run test:rpc -- -- --debug
+
+     // To run a specific spec using debug mode
+    npm run test  get-nfts.spec.ts -- --debug
+
+    // To run any other spec using debug mode from the commandline
+    npm run test:debug <your-new-spec-or-a-partial-spec-match>
+    ```
+
 ### Node Operations
 
 - **Create Node**: Tests the creation of a new node through the UI.
