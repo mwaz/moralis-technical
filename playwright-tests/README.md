@@ -49,7 +49,7 @@ This project contains functional and automation tests for both UI and API using 
 
 ## Running the Tests
 
-#### [Important] Kindly refer to the Known issues section on the root directory, if you are unable to execute tests from terminal or you encounter failures, execute the tests in debug mode to prevent Google Captcha from detecting the login script. More details on the Running tests on debug mode section below
+### [Important] Kindly refer to the Known issues section on the root directory, if you are unable to execute tests from terminal or you encounter failures, execute the tests in debug mode to prevent Google Captcha from detecting the login script. More details on the Running tests on debug mode section below
 
 1. **Execute all tests:**
 
