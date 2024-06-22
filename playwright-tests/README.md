@@ -49,6 +49,8 @@ This project contains functional and automation tests for both UI and API using 
 
 ## Running the Tests
 
+### [Important] Kindly refer to the Known issues section on the root directory, if you are unable to execute tests from terminal or you encounter failures, execute the tests in debug mode to prevent Google Captcha from detecting the login script. More details on the Running tests on debug mode section below
+
 1. **Execute all tests:**
 
     ```sh
@@ -79,6 +81,23 @@ This project contains functional and automation tests for both UI and API using 
     ```sh
     npx playwright test tests/task-1/node/create-node.spec.ts
 
+    ```
+
+6. **Run tests using DEBUG mode: [Especially when evading Google Captcha]**
+    You can run tests by using debug, this is especially helpful because of the Google Recaptcha issues on the moralis. For example:
+
+    ```bash
+    // To run nft folder specs 
+    npm run test:nft -- -- --debug
+
+    // To run rpc folder specs
+    npm run test:rpc -- -- --debug
+
+     // To run a specific spec using debug mode
+    npm run test  get-nfts.spec.ts -- --debug
+
+    // To run any other spec using debug mode from the commandline
+    npm run test:debug <your-new-spec-or-a-partial-spec-match>
     ```
 
 ### Node Operations

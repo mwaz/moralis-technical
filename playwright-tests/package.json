@@ -6,6 +6,7 @@
     "test:rpc": "npm run test rpc",
     "test:nft": "npm run test get-nft",
     "test:node": "npm run test create-node",
+    "test:debug": "npm run test -- --debug",
     "lint": "npx eslint ."
   },
   "keywords": [],
